@@ -1,0 +1,45 @@
+# Kapitel 1: Grundläggande Python
+# Delkapitel 1.5 Rep satser 2
+# Uppgift 1.5.3
+# Skriv ut en formaterad tabell med åtminstone 20 värden för z =
+# sin(x)sin(y)/(xy) funktionen. Tabellen innehåller tre rader med namn x, y, och z. Användaren
+# anger intervall för x och y. Programmet skall hantera punkterna med x = 0 och/eller y = 0 på
+# ett lämpligt sätt.
+from math import sin
+import numpy as np
+
+
+#x = float(input('skriv ett heltal för x: '))
+#y = float(input('skriv ett heltal för y: '))
+
+
+x,y = map(int,input('skriv ett interval i heltal för x och y med ett mellanslag: ').split())
+#x = 10
+#y = 10
+
+for i in range(x):
+        
+    for m in range(y):    
+        if i == 0 and m == 0:
+            z = 1
+        elif i  == 0 and m !=0:
+            z = sin(m)/(m)
+        elif m == 0 and i !=0:
+            z = sin(i)/(i)
+        else:
+            z = (sin(i)*sin(m))/(i*m)
+        print(f'x = {i:3}',end =' \t')
+        print(f'y = {m:3}',end =' \t')
+        print(f'z = {z:3}')   
+
+
+    #for m in range(1,21):
+    #    m =  (sin(i)*sin(i))/(i*i)   
+     #   print('z = {:.3f}'.format(m),end ='\t')
+#print()  
+#for m in np.arange(1, 19):                
+ #     print('| ', i, end =' \t')   #skriver ut tal 1-9 och 1-10 och multiplicerar med varandra och printar ut hela tabelen, och avslutar varje med ny rad(end =) där \ är tab
+  #  print()
+    
+
+    
